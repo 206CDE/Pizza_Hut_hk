@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<meta charset="utf-8"/>
+<title>abc Online Supermarket - Information Comfirm Page</title>
+<link rel="icon" href="Image/Background Logo/Company Logo 2.png"> <!-- Icon -->
+<link rel="stylesheet" href="main website style.css"> <!-- All classes refer to this css -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!-- Faded Animation reference -->
+</head>
+
+
+<style>
+#show_check_product::-webkit-scrollbar {
+  width: 15px
+}
+
+#show_check_product::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 30px
+}
+
+#show_check_product::-webkit-scrollbar-thumb {
+  background: #2196F3; 
+  border-radius: 30px
+}
+
+#show_check_product::-webkit-scrollbar-thumb:hover {
+  background: #21cdf3
+}  
+
+.close1 {
+  position: absolute; 
+  top: 32px; 
+  left: 1344px; 
+  font-size: 60px; 
+  font-weight: bold
+}
+
+.close1:hover,
+.close1:focus {
+  color: red;
+  cursor: pointer
+}
+</style>
+
+
+<body style="background-image: url('Image/Background Logo/Wallpaper Logo.png'); background-size: cover"> 
+<script src="Zoom Resize Function.js"></script>  <!-- Before displaying content, resize the screen based on the resolutions -->  
+  
+<input type="image" src="Image/Button Logo/Go Back Logo 2.png" alt="Go Back 2" onclick="window.history.back()"
+style="position: absolute; cursor: pointer; left: 10px; top: 10px; outline:none; width: 168px; height: 120px">
+
+<br>
+<br>
+<div style="text-align: center; font-size: 75px; color: #F0FFFF"><b>Comfirm Information</b></div>
+<br>
+
+<form action="http://localhost:5000/send_order" id="send_order_form" method="post" style="border: 1px solid black; 
+background-color: #F5FFFA ; margin-left: 400px; margin-right: 400px; height: 1900px; border-radius: 60px" onsubmit="return false">
+  
+<br>
+<br>
+<div style="margin-left: 50px; font-size: 40px"><u>Contact Information</u></div>
+<pre style="margin-left: 50px; font-size: 26px; margin-top: 25px">Title:          <select id="title" name="title" style="cursor: pointer" autocomplete="off" required>
+  <option value="" disabled selected hidden></option>
+  <option>Mr.</option>
+  <option>Mrs</option>
+  <option>Miss</option>
+  <option>Dr.</option>
+</select></pre>
+<pre style="margin-left: 50px; font-size: 26px; margin-top: 15px">Name/Nickname:  <input type="text" id="nickname" name="nickname" autocomplete="off"  required></pre>
+<pre style="margin-left: 50px; font-size: 26px; margin-top: 15px">Phone Number:   <input type="text" id="phone_number" name="phone_number" autocomplete="off"required></pre>
+<br>
+
+<div style="border: 1px solid #C0C0C0; width:90%; height: 3px; background-color: #C0C0C0; margin: auto"></div>
+<br>
+<br>
+<div style="margin-left: 50px; font-size: 40px"><u>Address Information</u></div>
+<pre style="margin-left: 50px; font-size: 26px; margin-top: 25px">Address Nickname: <input type="text" id="address_name" name="address_name" autocomplete="off"required></pre>
+<pre style="margin-left: 50px; font-size: 26px; margin-top: 15px">Floor: <input type="number" id="floor" name="floor" style="width: 80px; text-align: center">  <span style="font-size: 15px">(Optional)</span></pre>
+<pre style="margin-left: 50px; font-size: 26px; margin-top: 15px">Flat:  <input type="text" id="flat" name="flat" size="2" style="text-align: center" autocomplete="off">    <span style="font-size: 15px">(Optional)</span></pre>
+<pre style="margin-left: 50px; font-size: 26px; margin-top: 15px">Block/Building:   <input type="text" id="block_building" name="block_building" autocomplete="off" required></pre>
+<pre style="margin-left: 50px; font-size: 26px; margin-top: 15px">Estate/Street:    <input type="text" id="estate_street" name="estate_street" autocomplete="off" required></pre>
+<pre style="margin-left: 50px; font-size: 26px; margin-top: 15px">District:         <select id="district" name="district" autocomplete="off" style="font-size: 18px; 
+cursor: pointer" required>
+  <option value="" disabled selected hidden></option>
+  <option>Central and Western</option>
+  <option>Eastern</option>
+  <option>Southern</option>
+  <option>Wan Chai</option>
+  <option>Sham Shui Po</option>
+  <option>Kowloon City</option>
+  <option>Kwun Tong</option>
+  <option>Wong Tai Sin</option>
+  <option>Yau Tsim Mong</option>
+  <option>Islands</option>
+  <option>Kwai Tsing</option>
+  <option>North</option>
+  <option>Sai Kung</option>
+  <option>Sha Tin</option>
+  <option>Tai Po</option>
+  <option>Tsuen Wan</option>
+  <option>Tuen Mun</option>
+  <option>Yuen Long</option>
+</select></pre>
+<pre style="margin-left: 50px; font-size: 26px; margin-top: 15px">Region:  <input type="radio" name="region" value="Hong Kong Island" required> <i style="font-size: 18px">Hong Kong Island</i>   
+         <input type="radio" name="region" id="region" autocomplete="off" value="Kowloon" required> <i style="font-size: 18px">Kowloon</i> 
+         <input type="radio" name="region" id="region" autocomplete="off" value="New Territories" required> <i style="font-size: 18px">New Territories</i>   
+         <input type="radio" name="region" id="region" autocomplete="off" value="Outlying Islands" required> <i style="font-size: 18px">Outlying Islands</i></pre>
+<br>
+
+<div style="border: 1px solid #C0C0C0; width:90%; height: 3px; background-color: #C0C0C0; margin: auto"></div>
+<br>
+<br>
+<div style="margin-left: 50px; font-size: 40px"><u>Payment Information</u></div>
+<fieldset style="margin-left: 50px; margin-right: 200px; font-size: 18px; margin-top: 25px; border: 2px solid #C0C0C0">
+  <legend>Payment Method</legend>
+<pre> <input type="radio" name="pay_method" id="pay_method" autocomplete="off" value="Cash" onclick="document.getElementById('credit_card').disabled = true; document.getElementById('credit_card').value='none'; document.getElementById('credit_card').style='cursor: context-menu'" required> <i style="font-size: 18px">Cash</i></pre>
+<pre> <input type="radio" name="pay_method" id="pay_method" autocomplete="off" value="Octopus" onclick="document.getElementById('credit_card').disabled = true; document.getElementById('credit_card').value='none'; document.getElementById('credit_card').style='cursor: context-menu'" required> <i style="font-size: 18px">Octopus</i></pre>
+<pre> <input type="radio" name="pay_method" id="pay_method" autocomplete="off" value="Credit Card" onclick="document.getElementById('credit_card').disabled = false; document.getElementById('credit_card').style='cursor: pointer'" required> <i style="font-size: 18px">Credit Card</i>     <select id="credit_card" name="credit_card" autocomplete="off" disabled required>
+  <option value="" disabled selected hidden></option>
+  <option>Visa</option>
+  <option>MasterCard</option>
+  <option>American Express</option>
+  <option>UnionPay</option></select></pre> 
+</fieldset>
+<pre style="margin-left: 50px; margin-top: 40px; font-size: 26px; text-decoration: underline overline"><u><i>Price</i></u></pre>
+<pre style="margin-left: 50px; font-size: 20px; margin-top: -10px">Product:   <u id="product_price"></u>   <span style="color: orange; font-size: 15px; cursor: pointer" onclick="document.getElementById('check_product').style.display='block'"><u>Check Product</u></span></pre>
+<pre style="margin-left: 50px; font-size: 20px; margin-top: -15px">Shipping:  <u id="shipping_price"></u>   <span style="font-size: 15px">*Free delivery service for every consumption over $300</span></pre>
+<pre style="margin-left: 50px; font-size: 20px; margin-top: -15px">Discount:  <u id="discount"></u></pre>
+<pre style="margin-left: 50px; font-size: 26px; margin-top: 15px; color: red">[ The total price you have to pay: <u> <span id="total_price"></span> </u> ]</pre>
+<br>
+
+<div style="border: 1px solid #C0C0C0; width:90%; height: 3px; background-color: #C0C0C0; margin: auto"></div>
+
+<br>
+<input type="image" src="Image/Button Logo/Confirm Logo.png" alt="Confirm" width="330" height="120" 
+style="background-color: transparent; border: none; display: block; margin-left: auto; margin-right: auto; cursor: pointer; outline: none" 
+onclick="final_check()">
+
+<input type="hidden" name="product_price_input" id="product_price_input">
+<input type="hidden" name="shipping_price_input" id="shipping_price_input">
+<input type="hidden" name="total_price_input" id="total_price_input">
+<input type="hidden" name="product_list" id="product_list">
+<input type="hidden" name="quantity_list" id="quantity_list">
+</form>
+<br>
+<br>
+<br>
+<br>
+
+<div id="check_product" class="modal">
+  <br>
+  <div id="close" class="modal-content animate" style="width:70px; height: 70px; margin-left: 87.9%"
+  style="position: absolute; right: 25px; top: 0; color: #000; font-size: 35px; font-weight: bold">
+    <span onclick="document.getElementById('check_product').style.display='none'" title="Close1 Modal" class="close1">&times;</span>
+  </div> 
+
+  <div id="show_check_product" class="modal-content animate" style="height: 600px; width: 85%; margin: -1.2% auto 0% auto; overflow: auto">
+    <div style="background-color: #DCDCDC; text-align: center; font-size: 60px"><b>Product List</b></div>
+      <br>
+    <table id="show_check_product_list" style="border-collapse: collapse; 
+      text-align: center; margin-left: auto; margin-right: auto"> 
+    </table>
+    <br>
+    <br>
+  </div> 
+</div>
+
+
+<script>
+//Check product code
+total_price = 0
+ 
+total_list = ""
+total = 0  
+if (localStorage.getItem("item_list") != null) 
+  {var photo_list = localStorage.getItem("photo_list").split(",");
+   var item_list = localStorage.getItem("item_list").split(",");
+   var quantity_list = localStorage.getItem("quantity_list").split(",");
+   var price_list = localStorage.getItem("price_list").split(",");
+   var subtotal_list = localStorage.getItem("subtotal_list").split(",")
+};
+
+table_content = 
+`
+<tr>
+  <th style="padding: 10px 70px; font-size: 30px; border-bottom: 5px solid grey; color: blue">
+  Product</th>
+  <th style="padding: 10px 30px; font-size: 30px; border-left: 5px solid grey; border-bottom: 5px solid grey; color: blue">
+  Quantity</th>
+  <th style="padding: 10px 30px; font-size: 30px; border-left: 5px solid grey; border-bottom: 5px solid grey; color: blue">
+  Price</th>
+  <th style="padding: 10px 30px; font-size: 30px; border-left: 5px solid grey; border-bottom: 5px solid grey; color: blue">
+  Subtotal</th>
+</tr>
+`;
+
+product_list_length = item_list.length; 
+for (i = 0; i < product_list_length; i++) {
+  position = i  
+  table_content = table_content +
+  `
+  <tr>
+    <td style="padding: 1px 70px; border-bottom: 5px solid grey"><h3>`+item_list[i]+`<br>`+photo_list[i]+`</h3></td>
+    <td style="padding: 1px 30px; border-bottom: 5px solid grey; border-left: 5px solid grey"><h3>`+quantity_list[i]+`</h3></td>
+    <td style="padding: 1px 30px; border-bottom: 5px solid grey; border-left: 5px solid grey"><h3>`+price_list[i]+`</h3></td>
+    <td style="padding: 1px 30px; border-bottom: 5px solid grey; border-left: 5px solid grey"><h3><u>`+subtotal_list[i]+`</u></h3></td>
+  </tr>
+  `;
+
+  total_list = total_list + subtotal_list[i]
+};
+
+for (i = 0; i < total_list.split("$").length; i++) {
+  total = total + Number(total_list.split("$")[i])
+};
+
+//Each item that added in the shopping cart will create a table row that contain "delete item" button, item photo, item name, quantity, price and subtotal
+
+//Below the table, total price will be shown
+document.getElementById("show_check_product_list").innerHTML = table_content +
+`
+<tr>
+  <td style="border-left: 1px solid white; border-bottom: 1px solid white;"></td>
+  <td style="border-left: 1px solid white; border-bottom: 1px solid white;"></td>
+  <td style="border-left: 1px solid white; border-bottom: 1px solid white;"></td>
+  <td style="padding: 1px 30px; color: red; border-top: 6px dashed red; border-left: 6px dashed red"><h3><u>$`+total+`</u></h3></td>
+</tr>
+`
+document.getElementById("product_price").innerHTML = `$` + total
+document.getElementById("product_price_input").value = total
+total_price = total_price + total
+
+//For every consumption over $300, shipping price will be $0
+if (total_price >= 300) {
+  document.getElementById("shipping_price").innerHTML = `$0`
+  document.getElementById("shipping_price_input").value = 0
+}
+else 
+  {
+  document.getElementById("shipping_price").innerHTML = `$25`
+  total_price = total_price + 25  
+  document.getElementById("shipping_price_input").value = 25
+  }
+
+document.getElementById("discount").innerHTML = "0% OFF  (Non-member)"
+total_price = Math.floor(total_price*1)
+
+document.getElementById("total_price").innerHTML = `$` + total_price 
+document.getElementById("total_price_input").value = total_price
+
+document.getElementById("product_list").value = localStorage.getItem("item_list")
+document.getElementById("quantity_list").value = localStorage.getItem("quantity_list")
+
+//--------------------------------------------------------------------
+//Function:
+function final_check() {
+  //Have final check for some value input validity
+  if (document.getElementById("nickname").value.length > 45)  
+    { 
+      document.getElementById("nickname").setCustomValidity("Maximum length of last name/nickname is 45!");
+      document.getElementById("nickname").oninput = 
+      function reset_valid() {document.getElementById("nickname").setCustomValidity('')}
+    };
+
+  if (document.getElementById("phone_number").value.length != 8 ||
+      Number.isInteger(Number(document.getElementById("phone_number").value)) == false ||
+      Number(document.getElementById("phone_number").value) < 0)
+    { 
+      document.getElementById("phone_number").setCustomValidity("Invalid phone number!");
+      document.getElementById("phone_number").oninput = 
+      function reset_valid() {document.getElementById("phone_number").setCustomValidity('')}            
+    };
+
+  if (document.getElementById("address_name").value.length > 45)  
+    { 
+      document.getElementById("address_name").setCustomValidity("Maximum length of address nickname is 45!");
+      document.getElementById("address_name").oninput = 
+      function reset_valid() {document.getElementById("address_name").setCustomValidity('')}
+    };
+
+  if (document.getElementById("floor").value != "") {
+    if (Number(document.getElementById("floor").value) < 1)
+    { 
+      document.getElementById("floor").setCustomValidity("Please enter a positive integer!");
+      document.getElementById("floor").oninput = 
+      function reset_valid() {document.getElementById("floor").setCustomValidity('')}
+    }  
+  };
+
+  if (document.getElementById("floor").value.length > 3)  
+    { 
+      document.getElementById("floor").setCustomValidity("Maximum length of floor is 3!");
+      document.getElementById("floor").oninput = 
+      function reset_valid() {document.getElementById("floor").setCustomValidity('')}
+    };
+
+  //One length character that is a english word
+  if (document.getElementById("flat").value.length == 1 & Number.isInteger(Number(document.getElementById("flat").value)) == false) {
+      acceptable_input = false;
+      character = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+      for (i=0; i<character.length; i++) {
+        if (document.getElementById("flat").value.toLowerCase() == character[i]) {
+          acceptable_input = true
+        }
+      }
+      if (acceptable_input == false) { 
+        document.getElementById("flat").setCustomValidity("Please enter a positive integer or a english character!");
+        document.getElementById("flat").oninput = 
+        function reset_valid() {document.getElementById("flat").setCustomValidity('')}
+      }
+    }
+
+  //Two or more length characters must be a positive integer number
+  else if ((document.getElementById("flat").value.length > 1 & Number.isInteger(Number(document.getElementById("flat").value)) == false) ||
+  (document.getElementById("flat").value.length > 1 & Number(document.getElementById("flat").value) < 1) ||
+  (document.getElementById("flat").value.length > 1 & document.getElementById("flat").value.includes("."))) {
+    document.getElementById("flat").setCustomValidity("Please enter a positive integer or a english character!");
+    document.getElementById("flat").oninput = 
+    function reset_valid() {document.getElementById("flat").setCustomValidity('')}
+  };
+
+  if (document.getElementById("flat").value.length > 3)  
+    { 
+      document.getElementById("flat").setCustomValidity("Maximum length of flat is 3!");
+      document.getElementById("flat").oninput = 
+      function reset_valid() {document.getElementById("flat").setCustomValidity('')}
+    };
+
+  if (document.getElementById("block_building").value.length > 45)  
+    { 
+      document.getElementById("block_building").setCustomValidity("Maximum length of block/building is 45!");
+      document.getElementById("block_building").oninput = 
+      function reset_valid() {document.getElementById("block_building").setCustomValidity('')}
+    };
+
+  if (document.getElementById("estate_street").value.length > 45)  
+    { 
+      document.getElementById("estate_street").setCustomValidity("Maximum length of estate/street is 45!");
+      document.getElementById("estate_street").oninput = 
+      function reset_valid() {document.getElementById("estate_street").setCustomValidity('')}
+    }                
+
+  //If all input valid, display last confirm
+  if (document.getElementById("title").checkValidity() == true & document.getElementById("nickname").checkValidity() == true & 
+      document.getElementById("phone_number").checkValidity() == true & document.getElementById("address_name").checkValidity() == true & 
+      document.getElementById("floor").checkValidity() == true & document.getElementById("flat").checkValidity() == true &
+      document.getElementById("block_building").checkValidity() == true & document.getElementById("estate_street").checkValidity() == true &
+      document.getElementById("district").checkValidity() == true & document.getElementById("region").checkValidity() == true &
+      document.getElementById("pay_method").checkValidity() == true & document.getElementById("credit_card").checkValidity() == true)
+    {
+    document.getElementById('final_confirm_display').style.display='block'
+    };
+}
+
+//Try to send order finally and remove all data in shopping cart
+function send_order() {
+  document.getElementById("send_order_form").submit();
+  localStorage.removeItem("photo_list");
+  localStorage.removeItem("item_list");
+  localStorage.removeItem("quantity_list");
+  localStorage.removeItem("price_list");
+  localStorage.removeItem("subtotal_list")
+}
+</script>
+
+
+<div id="final_confirm_display" class="modal">
+  <div class="modal-content animate" style="height: 345px; width: 45%; margin: 10% auto 0% auto">   
+    <div style="background-color: #DCDCDC; text-align: center; font-size: 50px">
+      <b>Confirm Message</b>
+    </div>
+      <br>
+    <div style="text-align: center; font-size: 30px">
+    *** Your order will be send now ***
+    </div>
+      <br>
+    <input type="image" src="Image/Button Logo/Cancel Logo.png" width="240" height="60" style="border-radius: 30px; margin-left: 120px; outline: none" onclick="document.getElementById('final_confirm_display').style.display='none'">
+    <input type="image" src="Image/Button Logo/Ok Logo.png" width="150" height="60" style="border-radius: 30px; margin-left: 10px;
+      outline: none" onclick="send_order()">
+      <br><br><br>
+    <pre>  <b>*Note:</b> 1. Your order may not be accept if you provide wrong information
+         2. The product usually deliver in 2 - 3 days after you send your order
+    </pre>
+  </div>
+</div>
+
+</body>  
+
+</html>
+
