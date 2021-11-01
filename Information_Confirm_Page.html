@@ -134,7 +134,7 @@ cursor: pointer" required>
 <pre style="margin-left: 50px; font-size: 20px; margin-top: -12px">Shipping:  <u id="shipping_price" style="text-underline-position: under"></u></pre>
 <pre style="margin-left: 50px; font-size: 20px; margin-top: -12px">Total:     <u id="total_price" style="color: red; text-underline-position: under"></u></pre>
 
-<pre style="font-size: 15px; margin-top: 7px">      **Free delivery service for consumption over $300**</pre>
+<pre style="font-size: 15px; margin-top: 7px">      *Free delivery service for consumption over $300*</pre>
 
 <br>
 <br>
@@ -170,8 +170,8 @@ if (localStorage.getItem("item_list") != null)
    for (i = 0; i < price_list.toString().split("$").length; i++) {
      product = product + Number(price_list.toString().split("$")[i]) }
 
-   document.getElementById("product_price").innerHTML = `$` + product
-   document.getElementById("product_price_input").innerHTML = `$` + product
+   document.getElementById("product_price").innerHTML = `$` + product.toSring()
+   document.getElementById("product_price_input").innerHTML = `$` + product.toSring()
   };
 
 //For every consumption over $300, shipping price will be $0
@@ -189,8 +189,8 @@ else
 
 total = product + shipping
 
-document.getElementById("total_price").innerHTML = `$` + total 
-document.getElementById("total_price_input").value = `$` + total
+document.getElementById("total_price").innerHTML = `$` + total.toSring() 
+document.getElementById("total_price_input").value = `$` + total.toSring()
 document.getElementById("product_list_input").value = localStorage.getItem("item_list")
 
 //--------------------------------------------------------------------
