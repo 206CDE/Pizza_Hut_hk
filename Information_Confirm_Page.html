@@ -168,8 +168,8 @@ if (localStorage.getItem("item_list") != null)
    var price_list = localStorage.getItem("price_list").split(",");
 
    for (i = 0; i < price_list.toString().split("$").length; i++) {
-     product = Number(product) + Number(price_list.toString().split("$")[i]) }
-   alert(product)
+     product = product + Number(price_list.toString().split("$")[i]) }
+   
    document.getElementById("product_price").innerHTML = `$` + product.toString()
    document.getElementById("product_price_input").innerHTML = `$` + product.toString()
   };
