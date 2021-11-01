@@ -170,27 +170,27 @@ if (localStorage.getItem("item_list") != null)
    for (i = 0; i < price_list.toString().split("$").length; i++) {
      product = product + Number(price_list.toString().split("$")[i]) }
 
-   document.getElementById("product_price").innerHTML = product
+   document.getElementById("product_price").innerHTML = `$` + product
    document.getElementById("product_price_input").innerHTML = `$` + product
   };
 
 //For every consumption over $300, shipping price will be $0
 if (product >= 300) {
   document.getElementById("shipping_price").innerHTML = `$0`
-  document.getElementById("shipping_price_input").value = 0
+  document.getElementById("shipping_price_input").value = `$0`
   shipping = 0
 }
 else 
   {
   document.getElementById("shipping_price").innerHTML = `$50`
-  document.getElementById("shipping_price_input").value = 50
+  document.getElementById("shipping_price_input").value = `$50`
   shipping = 50  
   }
 
 total = product + shipping
 
 document.getElementById("total_price").innerHTML = `$` + total 
-document.getElementById("total_price_input").value = total
+document.getElementById("total_price_input").value = `$` + total
 document.getElementById("product_list_input").value = localStorage.getItem("item_list")
 
 //--------------------------------------------------------------------
