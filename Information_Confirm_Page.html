@@ -170,8 +170,8 @@ if (localStorage.getItem("item_list") != null)
    for (i = 0; i < price_list.toString().split("$").length; i++) {
      product = product + Number(price_list.toString().split("$")[i]) }
 
-   document.getElementById("product_price").innerHTML = `$` + product.toSring()
-   document.getElementById("product_price_input").innerHTML = `$` + product.toSring()
+   document.getElementById("product_price").innerHTML = `$` + product.toString()
+   document.getElementById("product_price_input").innerHTML = `$` + product.toString()
   };
 
 //For every consumption over $300, shipping price will be $0
@@ -189,8 +189,8 @@ else
 
 total = product + shipping
 
-document.getElementById("total_price").innerHTML = `$` + total.toSring() 
-document.getElementById("total_price_input").value = `$` + total.toSring()
+document.getElementById("total_price").innerHTML = `$` + total.toString() 
+document.getElementById("total_price_input").value = `$` + total.toString()
 document.getElementById("product_list_input").value = localStorage.getItem("item_list")
 
 //--------------------------------------------------------------------
