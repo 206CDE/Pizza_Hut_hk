@@ -167,6 +167,7 @@ if (localStorage.getItem("item_list") != null)
    var item_list = localStorage.getItem("item_list").split(",");
    var price_list = localStorage.getItem("price_list").split(",");   
    var price_list = price_list.toString().replace("$","");
+   alert (price_list);
    
    for (i = 0; i < price_list.toString().split(",").length; i++) {
      product = product + Number(price_list.toString().split(",")[i]);
