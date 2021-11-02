@@ -142,7 +142,7 @@ cursor: pointer" required>
 <div style="border: 1px solid #C0C0C0; width:90%; height: 3px; background-color: #C0C0C0; margin: auto"></div>
 
 <br>
-<input type="image" src="Image/Button Logo/Confirm Logo.png" alt="Confirm" width="330" height="120" 
+<input type="image" src="https://img1.wsimg.com/isteam/ip/5c74fa49-0397-4178-8373-bd195be5b659/confirm-png-8-png-image-confirm-png-549_197.png/:/rs=h:175,m" alt="Confirm" width="330" height="120" 
 style="background-color: transparent; border: none; display: block; margin-left: auto; margin-right: auto; cursor: pointer; outline: none" 
 onclick="final_check()">
 
@@ -284,7 +284,7 @@ function final_check() {
       function reset_valid() {document.getElementById("estate_street").setCustomValidity('')}
     }                
 
-  //If all input valid, display last confirm
+  //If all input valid, confirm to send order
   if (document.getElementById("title").checkValidity() == true & document.getElementById("nickname").checkValidity() == true & 
       document.getElementById("phone_number").checkValidity() == true & document.getElementById("address_name").checkValidity() == true & 
       document.getElementById("floor").checkValidity() == true & document.getElementById("flat").checkValidity() == true &
@@ -292,7 +292,6 @@ function final_check() {
       document.getElementById("district").checkValidity() == true & document.getElementById("region").checkValidity() == true &
       document.getElementById("pay_method").checkValidity() == true & document.getElementById("credit_card").checkValidity() == true)
     {
-    //send
     document.getElementById("send_order_form").submit();
     localStorage.removeItem("photo_list");
     localStorage.removeItem("item_list");
