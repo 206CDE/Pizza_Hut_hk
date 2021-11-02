@@ -165,10 +165,11 @@ total = 0
 if (localStorage.getItem("item_list") != null) 
   {var photo_list = localStorage.getItem("photo_list").split(",");
    var item_list = localStorage.getItem("item_list").split(",");
-   var price_list = localStorage.getItem("price_list").split(",");
-
-   for (i = 0; i < price_list.toString().split("$").length; i++) {
-     product = product + Number(price_list.toString().replace("$","").split(",")[i]);
+   var price_list = localStorage.getItem("price_list").split(",");   
+   var price_list = price_list.toString().replace("$","");
+   
+   for (i = 0; i < price_list.toString().split(",").length; i++) {
+     product = product + Number(price_list.toString().split(",")[i]);
      }
    
    document.getElementById("product_price").innerHTML = `$` + product.toString()
