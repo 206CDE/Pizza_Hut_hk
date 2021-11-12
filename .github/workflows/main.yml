@@ -34,7 +34,9 @@ jobs:
           pip install mysql.connector
           pip install Flask
           python connect.py
+          
       - name: commit files
+      
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
