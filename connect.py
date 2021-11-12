@@ -10,5 +10,6 @@ DB = pymysql.connect(
   user = "Pizza_Hut_Manager",
   host = "sg2plzcpnl487151.prod.sin2.secureserver.net",
   password = "4QHWqXT{2XHAEU#",
+  database = "Delivery_Information"
 )
 CUR = DB.cursor() 
