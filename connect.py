@@ -29,6 +29,6 @@ def send_order():
               </body></html>"""
 
 if __name__=='__main__':
-  app.run(host="https://github.com")
+  app.run(host="https://206cde.github.io/Pizza_Hut_hk/connect.py")
 
 DB.close()
