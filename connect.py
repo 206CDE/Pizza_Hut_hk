@@ -16,7 +16,7 @@ CUR = DB.cursor()
 
 app = Flask(__name__)
 
-@app.route("/send_order", methods = ['POST'])
+@app.route("/send_order", methods = ['GET', 'POST'])
 def send_order():
   CUR.execute("""SELECT COUNT(Order_ID) FROM `Delivery_Information`""")
   order_id = CUR.fetchone()
