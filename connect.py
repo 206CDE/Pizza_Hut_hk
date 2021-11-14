@@ -29,6 +29,6 @@ def send_order():
               </body></html>"""
 
 if __name__=='__main__':
-  app.run(host="221.124.209.137", port=8000, debug = True)
+  app.run(host="%", port=8000, debug = True)
 
 DB.close()
