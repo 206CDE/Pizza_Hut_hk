@@ -6,8 +6,8 @@ from flask import Flask, render_template, redirect, url_for, request
 
 
 #Loop until sucessfully make connection to the database
-x = True
-while x == True:
+connected = False
+while connected == False:
   try:
     DB = pymysql.connect( 
       user = "xs1cdlbk6b7o",
@@ -16,7 +16,7 @@ while x == True:
       database = "Pizza_Hut"
       )
     CUR = DB.cursor()
-    x = False
+    connected = True
 
   except:
     pass  
