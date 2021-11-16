@@ -160,7 +160,7 @@ def job_apply():
   #Once data send to database, go back to the main html page
   return """<html><body>
                 <script>
-                  alert("Thank you for your message! We will reply you within 48 hours.");
+                  alert("Thank you for applying our job! We will contact you as soon as possible.");
                   window.history.go(-1);
                 </script>
               </body></html>"""
